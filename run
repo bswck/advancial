@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+set -euxo pipefail
+
+TARGET="out/main"
+
+./build "$TARGET"
+
+set +x && echo
+
+"$TARGET" $@

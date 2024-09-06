@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+set -euxo pipefail
+
+TARGET="${1:-"out/main"}"
+SOURCE="${TARGET/out/src}.c"
+ASSEMBLY="$TARGET.s"
+
+./compile "$SOURCE" "$ASSEMBLY" && gcc "$SOURCE" -o "$TARGET"

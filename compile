@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+set -euxo pipefail
+
+gcc -S "${1:-"src/main.c"}" -o "${2:-"out/main.s"}"
